@@ -61,6 +61,7 @@ https://parcel-delivery-client-theta.vercel.app/
 ## 📂 Folder Structure
 
 parcel-delivery-client/
+
 │── src/
 │ ├── components/
 │ ├── pages/
@@ -79,8 +80,6 @@ parcel-delivery-client/
 │── README.md
 
 
-
----
 
 ## 👤 Project Owner
 
