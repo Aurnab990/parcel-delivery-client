@@ -29,7 +29,7 @@ https://parcel-delivery-client-theta.vercel.app/
 - Filter parcels by sender/receiver email
 - Real-time UI updates using RTK Query cache invalidation
 
-### 🛠 Admin Features (if included)
+### 🛠 Admin Features
 - Manage all parcels
 - Change delivery statuses
 - View all users
