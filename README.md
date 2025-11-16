@@ -61,27 +61,25 @@ https://parcel-delivery-client-theta.vercel.app/
 ## 📂 Folder Structure
 
 
-parcel-delivery-client/
-|
-├── src/
-| ├── components/
-| ├── pages/
-| ├── redux/
-| | ├── features/
-| | | ├── auth/
-| | | ├── parcel/
-| | ├── store.ts
-| ├── hooks/
-| ├── types/
-| ├── utils/
-| ├── App.tsx
-| ├── main.tsx
-|
-├── public/
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
+parcel-delivery-client
+- src
+  - components
+  - pages
+  - redux
+    - features
+      - auth
+      - parcel
+    - store.ts
+  - hooks
+  - types
+  - utils
+  - App.tsx
+  - main.tsx
+- public
+- package.json
+- tsconfig.json
+- vite.config.ts
+- README.md
 
 
 
