@@ -14,18 +14,18 @@ https://parcel-delivery-client-theta.vercel.app/
 
 ## For Testing
 
-dummy user1 {
-    email: halloween@gmail.com
-    pass: heLLo21@g6H%
-}
-dummy user2{
-    "email": "abir@gmail.com"
-    "password": "12Ws$34Hnju@"
-}
-dummy super Admin {
-    "email": "aurnabsuper@gmail.com",
-    "password": "2233445566"
-}
+dummy user1 
+    - email: halloween@gmail.com
+    - pass: heLLo21@g6H%
+
+dummy user2
+    - email: abir@gmail.com
+    - password: 12Ws$34Hnju@
+
+dummy super Admin 
+    - email: aurnabsuper@gmail.com
+    - password: 2233445566
+
 
 ---
 
