@@ -28,10 +28,10 @@ const Allusers = () => {
   };
 
   // Make Admin
-  const handleMakeAdmin = async (userId: string) => {
+  const handleMakeAdmin = async (id: string) => {
     const toastId = toast.loading("Updating role...");
     try {
-      const result = await makeAdmin(userId).unwrap();
+      const result = await makeAdmin(id).unwrap();
       if (result.success) {
             toast.success("User promoted to Admin", { id: toastId });
       }

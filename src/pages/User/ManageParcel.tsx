@@ -3,10 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useUserInfoQuery } from "@/redux/features/auth/auth.api";
 import { Package, MapPin, Truck, Hash } from "lucide-react";
-import { useParcelInfoQuery } from "@/redux/features/auth/parcel/parcel.api";
+import { useParcelInfoQuery, useUpdateParcelStatusMutation } from "@/redux/features/auth/parcel/parcel.api";
+import { toast } from "sonner";
+
 
 const ManageParcel = () => {
   const { data: userInfo } = useUserInfoQuery(undefined);
+  const [updateStatus] = useUpdateParcelStatusMutation();
+
   const user = userInfo?.data;
 
   const { data: parcelInfo, isLoading } = useParcelInfoQuery(undefined);
@@ -21,6 +25,18 @@ const ManageParcel = () => {
   const sendingParcels = parcelData.filter(
     (parcel: any) => parcel.sender.email === user?.email
   );
+
+  const handleParcelStatus = async(id: string) =>{
+    try {
+      await updateStatus(id).unwrap();
+      toast.success("Update Successfully");
+    } catch (error) {
+      console.log(error);
+      toast.error("Error!...");
+    }
+
+
+  }
 
   return (
     <div className="flex flex-col lg:flex-row gap-8 p-6">
@@ -78,7 +94,7 @@ const ManageParcel = () => {
                   </Badge>
 
                   {parcel.status === "PENDING" && (
-                    <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                    <Button onClick={()=> handleParcelStatus(parcel._id)} size="sm" className="bg-blue-600 hover:bg-blue-700">
                       Receive
                     </Button>
                   )}

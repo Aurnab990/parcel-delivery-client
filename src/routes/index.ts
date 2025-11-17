@@ -8,44 +8,53 @@ import { generateRoutes } from "@/utlis/generateRoutes";
 import { userSidebarItems } from "./userSidebarItems";
 import { adminSidebarItems } from "./adminSidebarItems";
 import { superAdminSiderbarItems } from "./superAdminSidebarItems";
+import Feature from "@/pages/Feature";
+import Home from "@/pages/Home";
+import BlogSection from "@/pages/Blog";
 export const router = createBrowserRouter([
-    {
-        Component: App,
-        path: "/",
-        children: [
-            {
-                Component: About,
-                path: "about"
-            }
-        ]
-    },
-    {
-        Component: DashboardLayout,
-        path: "/super_admin",
-        children: [
-            ...generateRoutes(superAdminSiderbarItems)
-        ]
-    },
-    {
-        Component: DashboardLayout,
-        path: "/admin",
-        children: [
-            ...generateRoutes(adminSidebarItems)
-        ]
-    },
-    {
-        Component: DashboardLayout,
-        path: "/user",
-        children: [
-            ...generateRoutes(userSidebarItems)
-        ]
-    },
-    {
-        Component: Registration,
-        path: "user-register"
-    },
-    {
-        Component: Login,
-        path: "login"
-    }
-])
+  {
+    Component: App,
+    path: "/",
+    children: [
+      {
+        Component: Home,
+        path: "home",
+      },
+      {
+        Component: About,
+        path: "about",
+      },
+      {
+        Component: Feature,
+        path: "feature",
+      },
+      {
+        Component: BlogSection,
+        path: "blog",
+      },
+    ],
+  },
+  {
+    Component: DashboardLayout,
+    path: "/super_admin",
+    children: [...generateRoutes(superAdminSiderbarItems)],
+  },
+  {
+    Component: DashboardLayout,
+    path: "/admin",
+    children: [...generateRoutes(adminSidebarItems)],
+  },
+  {
+    Component: DashboardLayout,
+    path: "/user",
+    children: [...generateRoutes(userSidebarItems)],
+  },
+  {
+    Component: Registration,
+    path: "user-register",
+  },
+  {
+    Component: Login,
+    path: "login",
+  },
+]);

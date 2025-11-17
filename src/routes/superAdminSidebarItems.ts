@@ -20,7 +20,7 @@ export const superAdminSiderbarItems = [
          
         },
         {
-          title: "Parcels Overview",
+          title: "Overview",
           url: "/super_admin/parcel-overview",
           component: ParcelOverview
         },

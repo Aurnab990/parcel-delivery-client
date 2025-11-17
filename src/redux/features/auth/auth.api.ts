@@ -15,6 +15,7 @@ export const authApi = baseApi.injectEndpoints({
                 method: "POST",
                 data: userInfo
             }),
+            invalidatesTags: ["USER"]
         }),
         logout: builder.mutation({
             query: () => ({
@@ -45,10 +46,10 @@ export const authApi = baseApi.injectEndpoints({
             invalidatesTags: ["USER"]
         }),
         updateUserRole: builder.mutation({
-            query: (userId)=>({
-                url: `/user/role/${userId}`,
+            query: (id)=>({
+                url: `/user/role/${id}`,
                 method: "PATCH",
-                body: {role: "ADMIN"}
+                data: {role: "ADMIN"}
             }),
             invalidatesTags: ["USER"]
         })

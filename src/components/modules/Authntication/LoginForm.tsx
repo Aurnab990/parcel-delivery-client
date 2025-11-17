@@ -10,8 +10,9 @@ import {
 import { Input } from "@/components/ui/input";
 import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
-import { useLoginMutation } from "@/redux/features/auth/auth.api";
+import { authApi, useLoginMutation } from "@/redux/features/auth/auth.api";
 import { toast } from "sonner";
+import { useDispatch } from "react-redux";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -24,11 +25,16 @@ const LoginForm = () => {
 
 
   const [login] = useLoginMutation();
+  const dispatch = useDispatch();
   const onSubmit: SubmitHandler<FieldValues> = async (data: any) => {
     try {
       const result = await login(data).unwrap();
       if (result.success) {
+        dispatch(authApi.util.invalidateTags(["USER"]));
         toast.success("Login successfully");
+        setTimeout(() => {
+        window.location.reload();
+      }, 100);
         navigate("/");
       }
     } catch (err: any) {
