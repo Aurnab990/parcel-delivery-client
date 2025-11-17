@@ -12,7 +12,6 @@ import { LogOut } from "lucide-react";
 import { useAppDispatch } from "@/redux/hook";
 import { toast } from "sonner";
 
-
 const DashboardLayout = () => {
   const { data: userData } = useUserInfoQuery(undefined);
   const [ logout ] = useLogoutMutation();
