@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useUserInfoQuery } from "@/redux/features/auth/auth.api"
+import { Link } from "react-router"
 
 const UserProfile = () => {
   const { data } = useUserInfoQuery(undefined)
@@ -17,12 +18,15 @@ const UserProfile = () => {
           <div className="h-40 bg-gradient-to-r from-blue-600 to-indigo-500"></div>
 
           {/* Edit Button */}
+          <Link to={`/user/update/${user._id}`}>
           <Button
+          
             variant="secondary"
             className="absolute top-4 right-4 bg-white/80 hover:bg-white text-gray-700 shadow-sm backdrop-blur-md cursor-pointer"
           >
             <Edit3 className="w-4 h-4 mr-2" /> Edit Profile
           </Button>
+          </Link>
 
           {/* Profile Header Section */}
           <CardHeader className="relative flex flex-col items-center text-center mt-[-4rem] space-y-3">

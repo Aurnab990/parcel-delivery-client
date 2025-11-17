@@ -1,5 +1,6 @@
 import AddParcel from "@/pages/Admin/AddParcel";
 import TrackingParcel from "@/pages/User/TrackingParcel";
+import UpdateProfile from "@/pages/User/UpdateProfile";
 import { lazy } from "react";
 const Analytics = lazy(()=> import("@/pages/Admin/Analytics"));
 const ManageParcel = lazy(()=> import("@/pages/User/ManageParcel"));
@@ -37,6 +38,13 @@ export const userSidebarItems = [
           url: "/user/tracking",
           component: TrackingParcel
         },
+        {
+          title: "Update profile",
+          url: "/user/update/:id",
+          component: UpdateProfile
+        }
+
+        
         
       ],
     }
