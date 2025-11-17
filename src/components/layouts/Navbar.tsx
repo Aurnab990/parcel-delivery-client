@@ -16,7 +16,7 @@ import { Link } from "react-router";
 import { useUserInfoQuery } from "@/redux/features/auth/auth.api";
 
 const navigationLinks = [
-  { href: "home", label: "Home", active: true },
+  { href: "/", label: "Home", active: true },
   { href: "feature", label: "Features" },
   { href: "/pricing", label: "Pricing" },
   { href: "about", label: "About" },

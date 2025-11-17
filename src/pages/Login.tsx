@@ -1,4 +1,5 @@
 import LoginForm from "@/components/modules/Authntication/LoginForm";
+import config from "@/config";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
@@ -19,6 +20,7 @@ const Login = () => {
         </div>
 
         <button
+          onClick={() => window.open(`${config.baseUrl}/auth/google`)}
           type="button"
           className="w-full flex items-center justify-center gap-2 py-2 px-4 border border-gray-300 rounded-lg shadow-sm bg-white hover:bg-gray-50 transition-colors text-gray-800 font-medium"
         >
